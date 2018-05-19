@@ -8,8 +8,8 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
   var question1 = a + b;
-  console.log(question1);
   var message = ('The sum of ' + a + ' and ' + b + ' is ' + question1 + '.');
+  console.log(question1);
   return [question1, message];
 }
 
@@ -27,9 +27,10 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   var question2 = a * b;
-  console.log(question2);
   var message = ('The product of ' + a + ' and ' + b + ' is ' + question2 + '.');
+  console.log(question2);
   return [question2, message];
+
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -40,18 +41,31 @@ testMultiply(5, 9);
 /////////////////////////////////////
 /* Problem 3
 Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
+
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
+
 IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  var sumAB = sum(a,b)[0];
+  var sumABC = sum(sumAB,c)[0];
+  console.log(sumABC);
+  var mulAB = multiply(a,b)[0];
+  var mulABC = multiply(mulAB,c)[0];
+  console.log(mulABC);
+  var sumMessage = (a + ' and ' + b + ' and ' + c + ' sum to ' + sumABC + '.');
+  console.log(sumMessage);
+  var mulMessage = ( 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulABC + '.');
+  console.log(mulMessage);
+  return [ sumABC , mulABC , sumMessage , mulMessage];
+  // var message = ('the product of ' + a + ' , ' + b + ' , ' + c + ' , ' 'is ' + question3a ' . ');
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
