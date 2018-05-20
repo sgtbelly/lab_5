@@ -50,17 +50,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumAB = sum(a,b)[0];
-  var sumABC = sum(sumAB,c)[0];
+  var sumAB = sum(a, b)[0];
+  var sumABC = sum(sumAB, c)[0];
   console.log(sumABC);
-  var mulAB = multiply(a,b)[0];
-  var mulABC = multiply(mulAB,c)[0];
+  var mulAB = multiply(a, b)[0];
+  var mulABC = multiply(mulAB, c)[0];
   console.log(mulABC);
   var sumMessage = (a + ' and ' + b + ' and ' + c + ' sum to ' + sumABC + '.');
   console.log(sumMessage);
-  var mulMessage = ( 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulABC + '.');
+  var mulMessage = ('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mulABC + '.');
   console.log(mulMessage);
-  return [ sumABC , mulABC , sumMessage , mulMessage];
+  return [sumABC, mulABC, sumMessage, mulMessage];
   // var message = ('the product of ' + a + ' , ' + b + ' , ' + c + ' , ' 'is ' + question3a ' . ');
 }
 
@@ -80,12 +80,21 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  var totalSum = 0;
+  for (var i = 0; i < sumArr.length; i++) {
+    var sumArray1 = sum(2, 3)[0];
+    var sumArray2 = sum(sumArray1, 4)[0];
+    console.log(sumArray2);
+    var message = (testArray + ' was passed in as an array of numbers, and ' + sumArray2 + ' is their sum.');
+    console.log(message);
+    return [sumArray2, message];
+  }
+  return [totalSum , message];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
